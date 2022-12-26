@@ -1,0 +1,50 @@
+[package]
+name = "<CONTRACT_NAME>"
+version = { workspace = true }
+authors = { workspace = true }
+edition = { workspace = true }
+
+exclude = [
+  # Those files are rust-optimizer artifacts. You might want to commit them for convenience but they should not be part of the source code publication.
+  "contract.wasm",
+  "hash.txt",
+]
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[profile.release]
+opt-level = 3
+debug = false
+rpath = false
+lto = true
+debug-assertions = false
+codegen-units = 1
+panic = 'abort'
+incremental = false
+overflow-checks = true
+
+[features]
+default = []
+# for quicker tests, cargo test --lib
+# for more explicit tests, cargo test --features=backtraces
+backtraces = ["cosmwasm-std/backtraces"]
+
+[dependencies]
+snafu = { version = "0.6.3" }
+serde = { version = "1.0.114", default-features = false, features = ["derive"] }
+schemars = "0.8.1"
+cosmwasm-std = { git = "https://github.com/scrtlabs/cosmwasm", branch = "secret", features = [
+  "staking",
+], package = "secret-cosmwasm-std" }
+secret-toolkit = { git = "https://github.com/itsHaseebSaeed/secret-toolkit", branch = "master", features = [
+  "permit",
+] }
+secret-storage-plus = { git = "https://github.com/securesecrets/secret-plus-utils", branch = "main" }
+
+shared = { path = "../../packages/shared" }
+
+[dev-dependencies]
+cosmwasm-schema = { version = "1.1.0" }
