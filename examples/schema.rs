@@ -1,11 +1,9 @@
 use std::env::current_dir;
 use std::fs::create_dir_all;
 
-use cards_storage::state::Config;
+use <CONTRACT_NAME>::state::Config;
 use cosmwasm_schema::{export_schema, remove_schemas, schema_for};
-use shared::cards_backend::msg::OwnerResponse;
-
-use shared::cards_backend::msg::{ExecuteMsg, InstantiateMsg, QueryMsg};
+use shared::<CONTRACT_NAME>::msg::{OwnerResponse,ExecuteMsg, InstantiateMsg, QueryMsg};
 
 fn main() {
     let mut out_dir = current_dir().unwrap();
