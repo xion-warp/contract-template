@@ -3,7 +3,7 @@ use cosmwasm_std::{
 };
 
 use crate::state::Config;
-use shared::cards_storage::msg::{ExecuteMsg, InstantiateMsg, OwnerResponse, QueryMsg};
+use shared::<CONTRACT_NAME>::msg::{ExecuteMsg, InstantiateMsg, OwnerResponse, QueryMsg};
 #[entry_point]
 pub fn instantiate(
     deps: DepsMut,
@@ -32,7 +32,6 @@ pub fn execute(
 ) -> StdResult<Response> {
     match msg {
         ExecuteMsg::ChangeOwner { addr } => todo!(),
-        ExecuteMsg::CreateCollection {} => todo!(),
     }
 }
 
