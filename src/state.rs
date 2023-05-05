@@ -1,5 +1,5 @@
+use cw_storage_plus::Item;
 use schemars::JsonSchema;
-use secret_toolkit::storage::Item;
 use serde::{Deserialize, Serialize};
 
 use cosmwasm_std::{CanonicalAddr, StdResult, Storage};
