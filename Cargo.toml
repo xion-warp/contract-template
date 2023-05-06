@@ -1,5 +1,5 @@
 [package]
-#name = "<CONTRACT_NAME>"
+name = "<CONTRACT_NAME>"
 version = { workspace = true }
 authors = { workspace = true }
 edition = { workspace = true }
@@ -40,8 +40,8 @@ cosmwasm-storage = { workspace = true }
 cw-storage-plus = { workspace = true }
 cw-utils = { workspace = true }
 cw2 = { workspace = true }
-cw721 = "0.17"
-cw721-base = { version = "0.17", features = ["library"] }
+#cw721 = { workspace = true }
+#cw721-base = { workspace = true, features = ["library"] }
 schemars = { workspace = true }
 serde = { workspace = true }
 thiserror = { workspace = true }
