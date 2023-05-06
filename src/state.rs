@@ -4,7 +4,7 @@ use serde::{Deserialize, Serialize};
 
 use cosmwasm_std::{CanonicalAddr, StdResult, Storage};
 
-pub static CONFIG: Item<Config> = Item::new(b"config");
+pub static CONFIG: Item<Config> = Item::new("config");
 
 #[derive(Serialize, Deserialize, Clone, Debug, Eq, PartialEq, JsonSchema)]
 pub struct Config {
