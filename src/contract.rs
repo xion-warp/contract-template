@@ -5,7 +5,7 @@ mod entry {
     };
     
     use crate::state::Config;
-    use shared::<CONTRACT_NAME>::msg::{ExecuteMsg, InstantiateMsg, OwnerResponse, QueryMsg};
+    use shared::<CONTRACT_NAME>::msg::{ExecuteMsg, InstantiateMsg, OwnerResponse, QueryMsg, MigrateMsg};
     #[entry_point]
     pub fn instantiate(
         deps: DepsMut,
@@ -48,7 +48,7 @@ mod entry {
     }
 
     #[entry_point]
-    pub fn migrate(_deps: DepsMut, _env: Env, _msg: MigrateMsg) -> Result<Response, ContractError> {
+    pub fn migrate(_deps: DepsMut, _env: Env, _msg: MigrateMsg) -> StdResult<Response> {
         // No state migrations performed, just returned a Response
         Ok(Response::default())
     }
