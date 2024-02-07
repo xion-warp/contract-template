@@ -10,7 +10,7 @@ edition = { workspace = true }
 crate-type = ["cdylib", "rlib"]
 
 [profile.release]
-opt-level = 3
+opt-level = "s"
 debug = false
 rpath = false
 lto = true
@@ -38,15 +38,14 @@ optimize = """docker run --rm -v "$(pwd)":/code \
 cosmwasm-std = { workspace = true }
 cosmwasm-storage = { workspace = true }
 cw-storage-plus = { workspace = true }
-cw-utils = { workspace = true }
 cw2 = { workspace = true }
 schemars = { workspace = true }
 serde = { workspace = true }
 thiserror = { workspace = true }
 shared = { path = "../../packages/shared" }
-serde-json-wasm = "0.5.1"
-archway-bindings = { path = "../../packages/bindings"}
-
+serde-json-wasm = { workspace = true }
+cosmwasm_schema = { workspace = true }
 
 [dev-dependencies]
-cosmwasm-schema = { workspace = true }
+cw-multi-test = { workspace = true }
+cw-utils = { workspace = true }
