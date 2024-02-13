@@ -5,7 +5,7 @@ use cosmwasm_std::{to_json_binary, Binary, Deps, DepsMut, Env, MessageInfo, Resp
 
 use crate::error::ContractError;
 use crate::state::Config;
-use shared::contr::msg::{ExecuteMsg, InstantiateMsg, MigrateMsg, OwnerResponse, QueryMsg};
+use shared::<CONTRACT_NAME>::msg::{ExecuteMsg, InstantiateMsg, MigrateMsg, OwnerResponse, QueryMsg};
 #[cfg_attr(not(feature = "library"), entry_point)]
 pub fn instantiate(
     deps: DepsMut,
