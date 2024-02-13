@@ -44,7 +44,7 @@ serde = { workspace = true }
 thiserror = { workspace = true }
 shared = { path = "../../packages/shared" }
 serde-json-wasm = { workspace = true }
-cosmwasm_schema = { workspace = true }
+cosmwasm-schema = { workspace = true }
 
 [dev-dependencies]
 cw-multi-test = { workspace = true }
